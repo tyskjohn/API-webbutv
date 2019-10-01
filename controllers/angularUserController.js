@@ -32,8 +32,6 @@ exports.register = function (req, res) {
                                 _id:            new db.Types.ObjectId,
                                 firstname:      req.body.firstname,
                                 lastname:       req.body.lastname,
-                                middlename:     req.body.middlename,
-                                dateofbirth:    req.body.dateofbirth,
                                 addressline:    req.body.addressline,
                                 zipcode:        req.body.zipcode,
                                 city:           req.body.city,
@@ -124,34 +122,7 @@ exports.getUser = function (req, res) {
         .then((data) => res.status(200).json(data))
         .catch((error) => res.status(500).json(error))
 
-    // User
-    //     .findOne({ _id: req.params.id })
-    //     .then((user) => {
-    //         let u =
-    //         {
-    //             _id: user._id,
-    //             firstname: user.firstname,
-    //             lastname: user.lastname,
-    //             middlename: user.middlename,
-    //             dateofbirth: user.dateofbirth,
-    //             addressline: user.addressline,
-    //             zipcode: user.zipcode,
-    //             city: user.city,
-    //             country: user.country,
-    //             addressline2: user.addressline2,
-    //             zipcode2: user.zipcode2,
-    //             city2: user.city2,
-    //             country2: user.country2,
-    //             email: user.email
-    //         }
 
-    //         res.status(200).json({
-    //             message: "User updated successfully",
-    //             success: true,
-    //             currentUser: u
-    //         })
-    //         .catch((error) => res.status(500).json(error))
-    //     })
 }
 
 exports.updateUser = function (req, res) {
@@ -173,8 +144,6 @@ exports.updateUser = function (req, res) {
                             $set: {
                                 firstname:      req.body.firstname,
                                 lastname:       req.body.lastname,
-                                middlename:     req.body.middlename,
-                                dateofbirth:    req.body.dateofbirth,
                                 addressline:    req.body.addressline,
                                 zipcode:        req.body.zipcode,
                                 city:           req.body.city,
@@ -205,8 +174,6 @@ exports.updateUser = function (req, res) {
 
                         firstname:      req.body.firstname,
                         lastname:       req.body.lastname,
-                        middlename:     req.body.middlename,
-                        dateofbirth:    req.body.dateofbirth,
                         addressline:    req.body.addressline,
                         zipcode:        req.body.zipcode,
                         city:           req.body.city,
@@ -228,34 +195,6 @@ exports.updateUser = function (req, res) {
                 console.log(error);
             })
     }
-
-
-
-    // User.updateOne({_id: req.params.id}, req.body)
-    // .then((data) => {
-    //     if(!data) {return res.status(404).end()}
-    //     return res.status(200).json({
-    //         message: 'Användaren uppdaterades i databasen',
-    //         error: error,
-    //         currentUser: {
-    //             _id:            user._id,
-    //             firstname:      user.firstname,
-    //             lastname:       user.lastname,
-    //             addressline:    user.addressline,
-    //             zipcode:        user.zipcode,
-    //             city:           user.city,
-    //             country:        user.country,
-    //             email:          user.email
-    //         }
-    //     })
-    // })
-    // .catch((error) => {
-    //     res.status(500).json({
-    //         message: 'Användaren uppdaterades inte',
-    //         error: error
-    //     })
-    // })
-
 }
 
 exports.deleteUser = function (req, res) {

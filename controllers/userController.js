@@ -32,7 +32,6 @@ exports.register = function (req, res) {
                                 _id: new db.Types.ObjectId,
                                 firstname: req.body.firstname,
                                 lastname: req.body.lastname,
-                                dateofbirth: req.body.dateofbirth,
                                 addressline: req.body.addressline,
                                 zipcode: req.body.zipcode,
                                 city: req.body.city,
@@ -106,18 +105,19 @@ exports.login = function (req, res) {
             }
         })
 }
+
 exports.getUsers = function (req, res) {
     DemoUser.find().then(data => res.status(200).json(data));
  }
+
 exports.getUser = function (req, res) {
-    
     DemoUser
         .findOne({_id: req.params.id})
         .then((data) => {
             return res.status(200).json(data)
         })
-
 }
+
 exports.updateUser = function (req, res) { 
     DemoUser
         .update({ _id: req.params.id }, req.body)

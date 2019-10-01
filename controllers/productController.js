@@ -19,7 +19,7 @@ exports.getProducts = (req,res) => {
             screen: '6,10',
             phoneWeight: '195',
 
-            rating: '3.5',
+            rating: '3,5',
         }
     ];
 
