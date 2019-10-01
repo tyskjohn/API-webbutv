@@ -49,4 +49,8 @@ app.use("/api/angularUsers", angularUserRoute);
 const productRoute = require('./routes/proucts.js');
 app.use("/api/products", productRoute);
 
+// http:localhost:3001/api/orders
+const orderRoute = require('./routes/orders.js');
+app.use("/api/orders", orderRoute);
+
 module.exports = app;
