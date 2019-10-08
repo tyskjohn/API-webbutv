@@ -10,7 +10,7 @@ exports.createOrder = (req, res) => {
             article1: {    
                             title: req.body.title,
                             color: req.body.color,
-                            price: req.body.price
+                            price: req.body.price 
             },
             created:        { type: Date, default: Date.now },
             modified:       { type: Date, default: Date.now },

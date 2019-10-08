@@ -99,7 +99,10 @@ exports.login = function (req, res) {
                             token: token,
                             id: user[0]._id,
                             email: user[0].email,
-                            currentUser: user[0]
+                            addressline: user[0].addressline,
+                            zipcode: user[0].zipcode,
+                            city: user[0].city,
+                            country: user[0].country,
                         })
                     }
                     return res.status(401).json({
